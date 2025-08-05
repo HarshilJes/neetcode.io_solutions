@@ -1,0 +1,33 @@
+ Useful Map Patterns in DSA
+1. Frequency Counting
+	map<int, int> freq;
+	for (int x : arr) freq[x]++;
+	Used in problems like majority element, hash-based grouping, etc.
+
+2. Memoization (DP)
+	map<pair<int, int>, int> dp;
+	if (dp.count({i, j})) return dp[{i, j}];
+
+3. Finding First Unique/Repeated Element
+	for (auto &[x, f] : freq) {
+    		if (f == 1) return x;
+	}
+   Trandition approach:
+	for (auto it = freq.begin(); it != freq.end(); ++it) {
+ 	   int x = it->first;
+    	   int f = it->second;
+	}
+	
+
+
+4. Map of Sets/Vectors
+	map<int, vector<int>> m;
+	m[key].push_back(value);
+	Used in group-based problems, adjacency lists, etc.
+
+5. Two Sum / Prefix Sum
+	map<int, int> seen;
+	for (int i = 0; i < n; ++i) {
+    		if (seen.count(target - nums[i])) return true;
+    		seen[nums[i]] = i;
+	}
