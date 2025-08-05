@@ -1,0 +1,78 @@
+🧵 1. Declaration and Initialization
+cpp
+Copy
+Edit
+#include <string>
+std::string s1 = "hello";
+std::string s2("world");
+std::string s3(s1); // copy
+std::string s4 = s1 + s2; // concatenation
+📥 2. Input and Output
+cpp
+Copy
+Edit
+std::string s;
+std::cin >> s;             // Input until space or newline
+std::getline(std::cin, s); // Input full line (includes spaces)
+std::cout << s << std::endl;
+🔁 3. Traversal
+cpp
+Copy
+Edit
+for (char c : s) {
+    std::cout << c << " ";
+}
+
+for (int i = 0; i < s.size(); ++i) {
+    std::cout << s[i];
+}
+
+🧪 5. Conversion between String and Numbers
+String to Integer
+cpp
+Copy
+Edit
+std::string s = "123";
+int x = std::stoi(s); // or std::stol, std::stoll for long types
+Integer to String
+cpp
+Copy
+Edit
+int x = 123;
+std::string s = std::to_string(x);
+📚 6. Comparison
+Strings can be compared directly using ==, <, >, etc.
+
+cpp
+Copy
+Edit
+if (s1 == s2) ...
+if (s1 < s2) ...  // lexicographical order
+🔤 7. Character Checks and Conversion (<cctype>)
+cpp
+Copy
+Edit
+#include <cctype>
+
+isalpha(c);   // Alphabetic
+isdigit(c);   // Digit
+tolower(c);   // Convert to lowercase
+toupper(c);   // Convert to uppercase
+🧠 8. String as Array of Characters
+cpp
+Copy
+Edit
+std::string s = "hello";
+s[0] = 'H';  // Strings are mutable in C++
+📌 9. String + Map Usage Example (Frequency Count)
+cpp
+Copy
+Edit
+std::string s = "abracadabra";
+std::map<char, int> freq;
+
+for (char c : s) freq[c]++;
+
+for (auto &[ch, count] : freq) {
+    std::cout << ch << " → " << count << "\n";
+}
